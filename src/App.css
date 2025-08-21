@@ -53,3 +53,42 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+.about {
+  height: 30rem;
+  background: radial-gradient(
+    circle at center,
+    rgba(20, 23, 27, 1) 0%,
+    /* center */ rgba(22, 25, 38, 1) 70%,
+    /* mid */ rgba(11, 13, 15, 1) 100% /* edges */
+  );
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.hero-image {
+  height: 23rem;
+  width: auto;
+  border-radius: 10%;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 4rem;
+}
+.hero-text h1 {
+  font-size: 4.5rem;
+}
+.hero-text h1::first-letter {
+  color: #ff0000;
+}
+.third-letter {
+  color: #2d2dff;
+}
