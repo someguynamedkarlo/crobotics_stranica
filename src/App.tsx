@@ -1,6 +1,7 @@
 import "./App.css";
 import Nav from "./Nav";
 import hero from "./assets/team_flag_image.jpg";
+
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         </div>
         <img src={hero} alt="Crobotics Team" className="hero-image" />
       </div>
+      <div></div>
     </>
   );
 }

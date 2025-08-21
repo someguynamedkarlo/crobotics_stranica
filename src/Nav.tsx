@@ -1,10 +1,23 @@
+import { useState } from "react";
 import "./App.css";
-import logo from "../src/assets/crobotics_logo.png";
+import logo from "./assets/crobotics_logo.png";
+
 function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="nav">
       <img src={logo} alt="Crobotics Logo" className="logo" />
-      <div className="nav-links-container">
+      <button
+        className="hamburger"
+        aria-label="Toggle navigation"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <div className={`nav-links-container${menuOpen ? " open" : ""}`}>
         <ul>
           <li>
             <a href="/">Home</a>
