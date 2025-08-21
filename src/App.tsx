@@ -19,6 +19,26 @@ function App() {
           </p>
         </div>
         <img src={hero} alt="Crobotics Team" className="hero-image" />
+        <div
+          className="scroll-arrow"
+          onClick={() => {
+            document
+              .querySelector(".goals")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+          aria-label="Scroll down"
+          tabIndex={0}
+          role="button"
+          onKeyPress={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              document
+                .querySelector(".goals")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          <span />
+        </div>
       </div>
       <div className="goals">
         <div className="goals-top">
