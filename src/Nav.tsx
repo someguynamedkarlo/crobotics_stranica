@@ -1,23 +1,18 @@
 import { useState } from "react";
-import "./App.css";
 import logo from "./assets/crobotics_logo.png";
+import "./nav.css";
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="nav">
-      <img src={logo} alt="Crobotics Logo" className="logo" />
-      <button
-        className="hamburger"
-        aria-label="Toggle navigation"
-        onClick={() => setMenuOpen((open) => !open)}
+      <div className="nav-left">
+        <img src={logo} alt="Crobotics Logo" className="logo" />
+      </div>
+      <div
+        className={`nav-center nav-links-container${menuOpen ? " open" : ""}`}
       >
-        <span />
-        <span />
-        <span />
-      </button>
-      <div className={`nav-links-container${menuOpen ? " open" : ""}`}>
         <ul>
           <li>
             <a href="/">Home</a>
@@ -32,6 +27,17 @@ function Nav() {
             <a href="/contact">Contact</a>
           </li>
         </ul>
+      </div>
+      <div className="nav-right">
+        <button
+          className="hamburger"
+          aria-label="Toggle navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
     </nav>
   );

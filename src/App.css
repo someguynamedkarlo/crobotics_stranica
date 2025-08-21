@@ -4,70 +4,11 @@
   box-sizing: border-box;
 }
 
-li {
-  list-style: none;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #18ff00;
-}
-
-.logo {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 4rem;
-  width: auto;
-  border-radius: 10%;
-}
-
-.nav {
-  position: relative; /* Needed for absolute positioning of links */
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: #1b1b1b;
-  padding: 0;
-  margin: 0;
-  min-height: 4rem;
-}
-
-.nav-links-container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  width: max-content;
-}
-
-ul {
-  display: flex;
-  gap: 5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .about {
-  height: 30rem;
-  background: radial-gradient(
-    circle at center,
-    rgba(20, 23, 27, 1) 0%,
-    /* center */ rgba(22, 25, 38, 1) 70%,
-    /* mid */ rgba(11, 13, 15, 1) 100% /* edges */
-  );
+  height: calc(
+    100vh - 4rem - 20px
+  ); /* 4rem is the navbar height, 20px is for padding */
+  background: rgba(20, 23, 27, 1);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -99,100 +40,11 @@ h1 {
   color: #2d2dff;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 2rem;
-  z-index: 1001;
-}
-.hamburger span {
-  display: block;
-  width: 2rem;
-  height: 0.25rem;
-  margin: 0.3rem 0;
-  background: #fff;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Responsive styles */
-@media (max-width: 800px) {
-  .nav {
-    min-height: 3.5rem;
-    padding-right: 0;
-  }
-  .logo {
-    margin-left: 1rem;
-    margin-right: auto;
-    height: 2.5rem;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .nav-links-container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 70vw;
-    max-width: 320px;
-    background: #1b1b1b;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 5rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-  }
-  .nav-links-container.open {
-    transform: translateX(0);
-  }
-  .nav-links-container ul {
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    padding-left: 2rem;
-  }
-  .nav-links-container ul li {
-    font-size: 1.2rem;
-  }
-}
-
-/* Optional: Hide menu when resizing up */
-@media (min-width: 801px) {
-  .nav-links-container {
-    position: static;
-    transform: none !important;
-    height: auto;
-    width: auto;
-    background: none;
-    box-shadow: none;
-    padding-top: 0;
-  }
-  .nav-links-container ul {
-    flex-direction: row;
-    gap: 5rem;
-    padding-left: 0;
-  }
-  .hamburger {
-    display: none;
-  }
-}
-
 @media (max-width: 800px) {
   .about {
     flex-direction: column;
     gap: 2rem;
-    height: auto;
+    height: calc(100vh - 4rem);
     padding: 2rem 0;
     align-items: center;
     justify-content: center;
@@ -207,4 +59,49 @@ h1 {
     max-width: 90vw;
     margin: 0 auto;
   }
+}
+
+.goals {
+  min-height: 150vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically if needed */
+  align-items: stretch; /* Stretch to full width */
+  gap: 2rem; /* Space between sections */
+  background: rgb(31, 36, 42);
+}
+
+.goals-top,
+.goals-bottom {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between; /* Spread children to edges */
+  align-items: center;
+  gap: 2rem;
+}
+.slik1 {
+  height: 29rem;
+  width: auto;
+  border-radius: 10%;
+  margin-left: 4rem;
+}
+
+.goals-top p {
+  font-size: 1.2rem;
+  margin-right: 4rem;
+}
+.goals-bottom p {
+  font-size: 1.2rem;
+  margin-left: 4rem;
+}
+.goals-bottom h1 {
+  margin-left: 4rem;
+}
+
+iframe {
+  margin-right: 15rem;
+  height: 25rem;
+  border: none;
 }
